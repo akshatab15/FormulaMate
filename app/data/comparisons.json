@@ -1,0 +1,218 @@
+{
+  "comparisons": [
+    {
+      "id": "vlookup-vs-index-match",
+      "title": "VLOOKUP vs INDEX/MATCH",
+      "formulas": [
+        "vlookup",
+        "index"
+      ],
+      "purpose": "Both find a value in one range and return a related value from another range.",
+      "syntax_a": "=VLOOKUP(lookup_value, table_array, col_index_num, FALSE)",
+      "syntax_b": "=INDEX(return_range, MATCH(lookup_value, lookup_range, 0))",
+      "advantages_a": [
+        "Simple, one formula to type",
+        "Readable for beginners"
+      ],
+      "advantages_b": [
+        "Works in any direction (left or right)",
+        "Survives inserted or deleted columns",
+        "Faster on very large ranges"
+      ],
+      "limitations_a": [
+        "Cannot look to the left",
+        "Column index breaks when columns move",
+        "Searches only the first column"
+      ],
+      "limitations_b": [
+        "Two nested functions and a steeper learning curve",
+        "Slightly harder to audit for new users"
+      ],
+      "example_a": "=VLOOKUP(\"P101\", A2:D100, 4, FALSE)",
+      "example_b": "=INDEX(D2:D100, MATCH(\"P101\", A2:A100, 0))",
+      "when_to_use": "Use VLOOKUP for quick simple tables; use INDEX/MATCH when columns may move or you must look left."
+    },
+    {
+      "id": "countif-vs-countifs",
+      "title": "COUNTIF vs COUNTIFS",
+      "formulas": [
+        "countif",
+        "countifs"
+      ],
+      "purpose": "Both count cells that satisfy criteria.",
+      "syntax_a": "=COUNTIF(range, criteria)",
+      "syntax_b": "=COUNTIFS(criteria_range1, criteria1, criteria_range2, criteria2, ...)",
+      "advantages_a": [
+        "One condition, very easy to learn",
+        "Short formula",
+        "Great for quick tallies"
+      ],
+      "advantages_b": [
+        "Multiple conditions in one formula",
+        "Removes nested AND tricks",
+        "Scales to many criteria"
+      ],
+      "limitations_a": [
+        "Only supports a single condition",
+        "Complex counting needs helper columns or SUMPRODUCT"
+      ],
+      "limitations_b": [
+        "More verbose",
+        "Overkill when a single condition is enough"
+      ],
+      "example_a": "=COUNTIF(C2:C100, \">60\")",
+      "example_b": "=COUNTIFS(A2:A100, \"East\", C2:C100, \">60\")",
+      "when_to_use": "Start with COUNTIF, then move to COUNTIFS as soon as a second condition appears."
+    },
+    {
+      "id": "sumif-vs-sumifs",
+      "title": "SUMIF vs SUMIFS",
+      "formulas": [
+        "sumif",
+        "sumifs"
+      ],
+      "purpose": "Both add values conditionally.",
+      "syntax_a": "=SUMIF(range, criteria, [sum_range])",
+      "syntax_b": "=SUMIFS(sum_range, criteria_range1, criteria1, ...)",
+      "advantages_a": [
+        "Compact for one condition",
+        "Easy to read in reports"
+      ],
+      "advantages_b": [
+        "Unlimited conditions",
+        "Consistent argument order (sum range first)"
+      ],
+      "limitations_a": [
+        "Single condition only"
+      ],
+      "limitations_b": [
+        "Longer formula",
+        "The sum range comes first, which confuses learners"
+      ],
+      "example_a": "=SUMIF(B2:B100, \"North\", D2:D100)",
+      "example_b": "=SUMIFS(D2:D100, B2:B100, \"North\", C2:C100, \"Approved\")",
+      "when_to_use": "Use SUMIF for a single filter and SUMIFS for multi-criteria reports."
+    },
+    {
+      "id": "if-vs-ifs",
+      "title": "IF vs IFS",
+      "formulas": [
+        "if",
+        "ifs"
+      ],
+      "purpose": "Both return values based on conditions.",
+      "syntax_a": "=IF(condition, value_if_true, value_if_false)",
+      "syntax_b": "=IFS(condition1, value1, condition2, value2, ...)",
+      "advantages_a": [
+        "Available in every Excel version",
+        "Handles nested logic and defaults easily"
+      ],
+      "advantages_b": [
+        "No deep nesting of brackets",
+        "Conditions read top-to-bottom like a menu"
+      ],
+      "limitations_a": [
+        "Nested IFs become hard to read after three levels",
+        "Easy to miscount closing brackets"
+      ],
+      "limitations_b": [
+        "Requires Excel 2019 or 365",
+        "No built-in default branch unless TRUE is added last"
+      ],
+      "example_a": "=IF(B2>=90, \"A\", IF(B2>=75, \"B\", \"C\"))",
+      "example_b": "=IFS(B2>=90, \"A\", B2>=75, \"B\", TRUE, \"C\")",
+      "when_to_use": "Use IF for simple yes/no checks and IFS for grading scales and tiered rules."
+    },
+    {
+      "id": "vlookup-vs-xlookup",
+      "title": "VLOOKUP vs XLOOKUP",
+      "formulas": [
+        "vlookup",
+        "xlookup"
+      ],
+      "purpose": "Both return a value matched on a lookup key.",
+      "syntax_a": "=VLOOKUP(value, table, col_index, FALSE)",
+      "syntax_b": "=XLOOKUP(value, lookup_array, return_array, if_not_found)",
+      "advantages_a": [
+        "Works in every Excel version",
+        "Familiar to most users"
+      ],
+      "advantages_b": [
+        "Looks left and right",
+        "Built-in not-found message",
+        "Exact match by default",
+        "Searches in any direction"
+      ],
+      "limitations_a": [
+        "Column index breaks when columns move",
+        "Requires FALSE for exact match or errors appear"
+      ],
+      "limitations_b": [
+        "Not available in Excel 2016 or 2019"
+      ],
+      "example_a": "=VLOOKUP(\"A12\", A2:E50, 3, FALSE)",
+      "example_b": "=XLOOKUP(\"A12\", A2:A50, C2:C50, \"Not found\")",
+      "when_to_use": "Use XLOOKUP if you have Microsoft 365; keep VLOOKUP for older versions."
+    },
+    {
+      "id": "concat-vs-textjoin",
+      "title": "CONCAT vs TEXTJOIN",
+      "formulas": [
+        "concat",
+        "textjoin"
+      ],
+      "purpose": "Both join text into a single string.",
+      "syntax_a": "=CONCAT(A1, B1, C1)",
+      "syntax_b": "=TEXTJOIN(\", \", TRUE, A1:C1)",
+      "advantages_a": [
+        "Fast for a handful of cells",
+        "Simple argument list"
+      ],
+      "advantages_b": [
+        "Automatic delimiter",
+        "Can skip empty cells",
+        "Accepts a whole range in one argument"
+      ],
+      "limitations_a": [
+        "No separator control, commas must be added manually",
+        "Range support depends on version"
+      ],
+      "limitations_b": [
+        "Available from Excel 2019/365 only"
+      ],
+      "example_a": "=CONCAT(A2, \" \", B2)",
+      "example_b": "=TEXTJOIN(\", \", TRUE, B2:B20)",
+      "when_to_use": "Use TEXTJOIN for lists and CONCAT for simple joins in older files."
+    },
+    {
+      "id": "find-vs-search",
+      "title": "FIND vs SEARCH",
+      "formulas": [
+        "find",
+        "search"
+      ],
+      "purpose": "Both return the position of text inside a string.",
+      "syntax_a": "=FIND(find_text, within_text)",
+      "syntax_b": "=SEARCH(find_text, within_text)",
+      "advantages_a": [
+        "Predictable, case-sensitive matching",
+        "Reliable for code parsing"
+      ],
+      "advantages_b": [
+        "Ignores letter case",
+        "Supports wildcards ? and *"
+      ],
+      "limitations_a": [
+        "Case sensitive with no wildcards",
+        "Fails when the user types a different case"
+      ],
+      "limitations_b": [
+        "Case-insensitive matching can hide mistakes",
+        "Wildcards may match more than expected"
+      ],
+      "example_a": "=FIND(\"@\", \"user@mail.com\")",
+      "example_b": "=SEARCH(\"excel\", \"Learn EXCEL today\")",
+      "when_to_use": "Use FIND for strict parsing and SEARCH for casual keyword checks."
+    }
+  ]
+}

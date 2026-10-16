@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.venv/
+venv/
+*.xlsx
+*.csv
+!app/data/*.json
+.DS_Store

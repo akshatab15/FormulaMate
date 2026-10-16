@@ -1,0 +1,68 @@
+{
+  "tips": [
+    {
+      "id": "tip-1",
+      "type": "tip",
+      "author": "Excel Formula Assistant",
+      "title": "Absolute references stop ranges from moving",
+      "body": "Press F4 while editing a reference to add dollar signs, for example $A$1:$A$10. When you drag the formula down, the reference stays fixed instead of shifting.",
+      "related": ["sumif", "vlookup", "match"]
+    },
+    {
+      "id": "tip-2",
+      "type": "tip",
+      "author": "Excel Formula Assistant",
+      "title": "Double-click the fill handle to fill instantly",
+      "body": "Select a cell with a formula and double-click the small square at its bottom-right corner. Excel fills the formula down as far as there is adjacent data.",
+      "related": ["sum", "if"]
+    },
+    {
+      "id": "tip-3",
+      "type": "tip",
+      "author": "Excel Formula Assistant",
+      "title": "Use named ranges for readable formulas",
+      "body": "Select a range, type a name such as Sales in the Name Box, then write =SUM(Sales). The formula becomes readable and does not break when rows are inserted.",
+      "related": ["sum", "average", "sumif"]
+    },
+    {
+      "id": "tip-4",
+      "type": "example",
+      "author": "Community example",
+      "title": "Exam pass rate in one formula",
+      "body": "If marks are in B2:B60: =ROUND(COUNTIF(B2:B60, \">=50\")/COUNT(B2:B60)*100, 1)&\"%\" gives the pass percentage directly.",
+      "related": ["countif", "count", "round"]
+    },
+    {
+      "id": "tip-5",
+      "type": "example",
+      "author": "Community example",
+      "title": "Month-wise sales summary",
+      "body": "Put month numbers 1-12 in a column and use =SUMIFS($D$2:$D$1000, $A$2:$A$1000, $E2) where column A stores =MONTH(date). Each row totals one month.",
+      "related": ["sumifs", "month", "sumif"]
+    },
+    {
+      "id": "tip-6",
+      "type": "tip",
+      "author": "Excel Formula Assistant",
+      "title": "Short keys for editing formulas",
+      "body": "F2 edits the active cell, Ctrl+` shows all formulas instead of results, and F9 evaluates a selected part of a formula while editing.",
+      "related": ["if", "sum"]
+    },
+    {
+      "id": "tip-7",
+      "type": "example",
+      "author": "Community example",
+      "title": "Extract domain from email",
+      "body": "=MID(A2, FIND(\"@\", A2) + 1, LEN(A2)) returns everything after the @ sign.",
+      "related": ["mid", "find", "len"]
+    },
+    {
+      "id": "tip-8",
+      "type": "tip",
+      "author": "Excel Formula Assistant",
+      "title": "Keep data clean before calculating",
+      "body": "Wrap imported columns with =TRIM(CLEAN(A2)) to remove stray spaces and control characters that break lookups.",
+      "related": ["trim", "vlookup", "value"]
+    }
+  ]
+}

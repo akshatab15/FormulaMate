@@ -1,0 +1,370 @@
+{
+  "templates": [
+    {
+      "id": "sales-report",
+      "name": "Sales Report",
+      "icon": "chart",
+      "description": "Monthly sales summary with regional totals, targets and growth.",
+      "columns": [
+        "Date",
+        "Region",
+        "Salesperson",
+        "Product",
+        "Quantity",
+        "Rate",
+        "Amount",
+        "Target"
+      ],
+      "formulas": [
+        {
+          "label": "Line amount",
+          "formula": "=E2*F2"
+        },
+        {
+          "label": "Total sales",
+          "formula": "=SUM(G2:G500)"
+        },
+        {
+          "label": "Region total",
+          "formula": "=SUMIF(B2:B500, \"North\", G2:G500)"
+        },
+        {
+          "label": "Average sale",
+          "formula": "=AVERAGE(G2:G500)"
+        },
+        {
+          "label": "Best salesperson",
+          "formula": "=INDEX(C2:C500, MATCH(MAX(G2:G500), G2:G500, 0))"
+        }
+      ],
+      "steps": [
+        "Create the headers in row 1 as listed.",
+        "Enter raw transactions below the headers.",
+        "Use the line amount formula down the Amount column.",
+        "Add the summary formulas on a separate Summary block.",
+        "Use SUMIF per region to build a regional leaderboard."
+      ]
+    },
+    {
+      "id": "attendance",
+      "name": "Attendance Register",
+      "icon": "calendar",
+      "description": "Track present days, absents and attendance percentage.",
+      "columns": [
+        "Roll No",
+        "Name",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Total Present",
+        "Working Days",
+        "Percentage"
+      ],
+      "formulas": [
+        {
+          "label": "Days present (P entries)",
+          "formula": "=COUNTIF(C2:O2, \"P\")"
+        },
+        {
+          "label": "Days absent",
+          "formula": "=COUNTIF(C2:O2, \"A\")"
+        },
+        {
+          "label": "Working days in row",
+          "formula": "=COUNTA(C2:O2)"
+        },
+        {
+          "label": "Attendance percentage",
+          "formula": "=ROUND(COUNTIF(C2:O2,\"P\")/COUNTA(C2:O2)*100, 1)"
+        },
+        {
+          "label": "Eligibility flag",
+          "formula": "=IF(COUNTIF(C2:O2,\"P\")/COUNTA(C2:O2)>=0.75, \"Eligible\", \"Not Eligible\")"
+        }
+      ],
+      "steps": [
+        "Mark each day as P (present) or A (absent).",
+        "Use COUNTIF to tally P and A per student.",
+        "Divide present days by working days for percentage.",
+        "Use IF to flag students below the eligibility limit."
+      ]
+    },
+    {
+      "id": "marksheet",
+      "name": "Marksheet / Result Sheet",
+      "icon": "type",
+      "description": "Totals, averages, grades and ranks for student marks.",
+      "columns": [
+        "Roll No",
+        "Name",
+        "Maths",
+        "Science",
+        "English",
+        "Total",
+        "Average",
+        "Grade",
+        "Rank"
+      ],
+      "formulas": [
+        {
+          "label": "Total marks",
+          "formula": "=SUM(C2:E2)"
+        },
+        {
+          "label": "Average",
+          "formula": "=AVERAGE(C2:E2)"
+        },
+        {
+          "label": "Grade",
+          "formula": "=IFS(G2>=90,\"A+\",G2>=75,\"A\",G2>=60,\"B\",G2>=45,\"C\",TRUE,\"F\")"
+        },
+        {
+          "label": "Rank",
+          "formula": "=RANK(F2, $F$2:$F$50, 0)"
+        },
+        {
+          "label": "Result",
+          "formula": "=IF(MIN(C2:E2)>=35, \"PASS\", \"FAIL\")"
+        }
+      ],
+      "steps": [
+        "Enter subject marks in the subject columns.",
+        "Copy SUM and AVERAGE down the sheet.",
+        "Apply IFS for grade bands.",
+        "Use RANK for a class ranking column."
+      ]
+    },
+    {
+      "id": "expenses",
+      "name": "Monthly Expenses Tracker",
+      "icon": "money",
+      "description": "Categorise expenses and watch the budget.",
+      "columns": [
+        "Date",
+        "Category",
+        "Description",
+        "Amount",
+        "Payment Mode",
+        "Month"
+      ],
+      "formulas": [
+        {
+          "label": "Category total",
+          "formula": "=SUMIF(B2:B400, \"Food\", D2:D400)"
+        },
+        {
+          "label": "Total spent",
+          "formula": "=SUM(D2:D400)"
+        },
+        {
+          "label": "Average daily spend",
+          "formula": "=ROUND(SUM(D2:D400)/DAY(EOMONTH(MAX(A2:A400),0)), 2)"
+        },
+        {
+          "label": "Budget left",
+          "formula": "=20000-SUM(D2:D400)"
+        },
+        {
+          "label": "Overspend flag",
+          "formula": "=IF(SUMIF(B2:B400,\"Travel\",D2:D400)>5000, \"Over Budget\", \"OK\")"
+        },
+        {
+          "label": "Month number",
+          "formula": "=MONTH(A2)"
+        }
+      ],
+      "steps": [
+        "Log every expense with date and category.",
+        "Use SUMIF per category for a breakdown.",
+        "Compare totals with a budget cell using IF."
+      ]
+    },
+    {
+      "id": "inventory",
+      "name": "Inventory / Stock Manager",
+      "icon": "calc",
+      "description": "Stock levels, reorder alerts and stock valuation.",
+      "columns": [
+        "SKU",
+        "Item",
+        "Opening",
+        "Inward",
+        "Outward",
+        "Closing",
+        "Rate",
+        "Value"
+      ],
+      "formulas": [
+        {
+          "label": "Closing stock",
+          "formula": "=C2+D2-E2"
+        },
+        {
+          "label": "Stock value",
+          "formula": "=F2*G2"
+        },
+        {
+          "label": "Total inventory value",
+          "formula": "=SUMPRODUCT(F2:F200, G2:G200)"
+        },
+        {
+          "label": "Reorder alert",
+          "formula": "=IF(F2<10, \"REORDER\", \"OK\")"
+        },
+        {
+          "label": "Items out of stock",
+          "formula": "=COUNTIF(F2:F200, 0)"
+        },
+        {
+          "label": "Fastest moving item",
+          "formula": "=INDEX(B2:B200, MATCH(MAX(E2:E200), E2:E200, 0))"
+        }
+      ],
+      "steps": [
+        "Maintain opening stock, inward and outward columns.",
+        "The closing stock formula keeps the balance current.",
+        "Use IF to raise reorder alerts automatically.",
+        "Value the whole inventory with SUMPRODUCT."
+      ]
+    },
+    {
+      "id": "employee-payroll",
+      "name": "Employee Payroll",
+      "icon": "money",
+      "description": "Salary structure with deductions and net pay.",
+      "columns": [
+        "Emp ID",
+        "Name",
+        "Basic",
+        "Allowance",
+        "Deduction",
+        "Gross",
+        "Net",
+        "Dept"
+      ],
+      "formulas": [
+        {
+          "label": "Gross salary",
+          "formula": "=C2+D2"
+        },
+        {
+          "label": "Net salary",
+          "formula": "=C2+D2-E2"
+        },
+        {
+          "label": "Department payroll",
+          "formula": "=SUMIF(H2:H100, \"Sales\", G2:G100)"
+        },
+        {
+          "label": "Average salary",
+          "formula": "=AVERAGE(G2:G100)"
+        },
+        {
+          "label": "Highest paid",
+          "formula": "=MAX(G2:G100)"
+        },
+        {
+          "label": "Headcount",
+          "formula": "=COUNTA(A2:A100)"
+        }
+      ],
+      "steps": [
+        "Fill basic, allowance and deduction per employee.",
+        "Gross and Net columns compute automatically.",
+        "Summarise per department with SUMIF."
+      ]
+    },
+    {
+      "id": "invoice-manager",
+      "name": "Invoice & GST Calculator",
+      "icon": "calc",
+      "description": "Line items, tax computation and payment status.",
+      "columns": [
+        "Invoice No",
+        "Date",
+        "Client",
+        "Item",
+        "Qty",
+        "Rate",
+        "Amount",
+        "GST %",
+        "Total",
+        "Status"
+      ],
+      "formulas": [
+        {
+          "label": "Amount before tax",
+          "formula": "=E2*F2"
+        },
+        {
+          "label": "Invoice total with GST",
+          "formula": "=ROUND(G2*(1+H2), 2)"
+        },
+        {
+          "label": "Total invoiced",
+          "formula": "=SUM(I2:I300)"
+        },
+        {
+          "label": "Unpaid amount",
+          "formula": "=SUMIF(J2:J300, \"Pending\", I2:I300)"
+        },
+        {
+          "label": "Paid invoices count",
+          "formula": "=COUNTIF(J2:J300, \"Paid\")"
+        },
+        {
+          "label": "Invoice month",
+          "formula": "=TEXT(B2, \"mmm yyyy\")"
+        }
+      ],
+      "steps": [
+        "Enter quantity and rate per line item.",
+        "Amount = Qty x Rate and Total adds the GST percentage.",
+        "Track receivables with SUMIF on status."
+      ]
+    },
+    {
+      "id": "student-gradebook",
+      "name": "Student Gradebook",
+      "icon": "type",
+      "description": "Test-wise scoring, absences and final result.",
+      "columns": [
+        "Roll",
+        "Name",
+        "Test 1",
+        "Test 2",
+        "Test 3",
+        "Best 2",
+        "Average",
+        "Grade"
+      ],
+      "formulas": [
+        {
+          "label": "Best two tests",
+          "formula": "=SUM(LARGE(C2:E2, 1), LARGE(C2:E2, 2))"
+        },
+        {
+          "label": "Average",
+          "formula": "=ROUND(AVERAGE(C2:E2), 1)"
+        },
+        {
+          "label": "Grade",
+          "formula": "=IF(G2>=85,\"Distinction\",IF(G2>=60,\"First Class\",\"Needs Work\"))"
+        },
+        {
+          "label": "Missing tests",
+          "formula": "=COUNTBLANK(C2:E2)"
+        },
+        {
+          "label": "Class topper",
+          "formula": "=INDEX(B2:B60, MATCH(MAX(F2:F60), F2:F60, 0))"
+        }
+      ],
+      "steps": [
+        "Enter test scores; blanks count as missing.",
+        "Use LARGE to keep only the best two scores.",
+        "Nested IF assigns final grades."
+      ]
+    }
+  ]
+}

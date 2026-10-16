@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Excel Formula Assistant - find, understand and learn Microsoft Excel formulas using plain language." />
+  <title>Excel Formula Assistant</title>
+  <link rel="icon" type="image/svg+xml" href="/static/assets/logo.svg" />
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-logo">fx</div>
+        <div class="brand-text">
+          <strong>Excel Formula Assistant</strong>
+          <span>Rule-based formula helper</span>
+        </div>
+      </div>
+      <nav class="nav" id="nav"></nav>
+      <div class="sidebar-footer">
+        <div><span class="status-dot" id="statusDot"></span><span id="statusText">Checking server…</span></div>
+        <div class="small-text mt-16">Local app · no cloud dependencies</div>
+      </div>
+    </aside>
+
+    <div class="mobile-backdrop" id="backdrop"></div>
+
+    <div class="main">
+      <header class="header">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation"></button>
+        <div class="header-title">
+          <h1 id="pageTitle">Dashboard</h1>
+          <p id="pageSubtitle">Overview of your formula workspace</p>
+        </div>
+        <div class="header-actions" id="headerActions"></div>
+      </header>
+      <main class="content" id="view"></main>
+    </div>
+  </div>
+
+  <div class="toast-wrap" id="toasts"></div>
+
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/store.js"></script>
+  <script src="/static/js/ui.js"></script>
+  <script src="/static/js/pages.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

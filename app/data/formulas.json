@@ -1,0 +1,1785 @@
+{
+  "categories": [
+    {
+      "id": "mathematical",
+      "name": "Mathematical",
+      "icon": "calc",
+      "description": "Arithmetic, rounding and aggregation formulas."
+    },
+    {
+      "id": "statistical",
+      "name": "Statistical",
+      "icon": "chart",
+      "description": "Counting, averaging and ranking formulas."
+    },
+    {
+      "id": "logical",
+      "name": "Logical",
+      "icon": "branch",
+      "description": "Decision making with conditions."
+    },
+    {
+      "id": "text",
+      "name": "Text",
+      "icon": "type",
+      "description": "Manipulate and clean text strings."
+    },
+    {
+      "id": "date-time",
+      "name": "Date and Time",
+      "icon": "calendar",
+      "description": "Work with dates, times and durations."
+    },
+    {
+      "id": "lookup",
+      "name": "Lookup and Reference",
+      "icon": "search",
+      "description": "Find and reference data across ranges."
+    },
+    {
+      "id": "conditional",
+      "name": "Conditional",
+      "icon": "filter",
+      "description": "Aggregate values based on conditions."
+    },
+    {
+      "id": "financial",
+      "name": "Financial",
+      "icon": "money",
+      "description": "Loans, investments and cash flow."
+    }
+  ],
+  "formulas": [
+    {
+      "id": "sum",
+      "name": "SUM",
+      "category": "mathematical",
+      "syntax": "=SUM(number1, [number2], ...)",
+      "description": "Adds all numbers in a range of cells or a list of values.",
+      "example": "=SUM(A1:A10)",
+      "example_output": "505",
+      "use_case": "Total of monthly sales figures entered in A1 to A10.",
+      "related": [
+        "sumif",
+        "sumifs",
+        "sumproduct",
+        "subtotal"
+      ],
+      "keywords": [
+        "sum",
+        "total",
+        "add",
+        "addition",
+        "add up",
+        "yog",
+        "jod",
+        "कुल",
+        "योग",
+        "बेरीज",
+        "बेरोज",
+        "जोड",
+        "जोडा",
+        "मोजकरे",
+        "बेरीज काढा"
+      ]
+    },
+    {
+      "id": "average",
+      "name": "AVERAGE",
+      "category": "statistical",
+      "syntax": "=AVERAGE(number1, [number2], ...)",
+      "description": "Returns the arithmetic mean of the supplied numbers.",
+      "example": "=AVERAGE(B2:B20)",
+      "example_output": "74.5",
+      "use_case": "Find the average marks of students in a class.",
+      "related": [
+        "averageif",
+        "median",
+        "mode",
+        "count"
+      ],
+      "keywords": [
+        "average",
+        "mean",
+        "avg",
+        "average of",
+        "sarasan",
+        "सरासरी",
+        "औसत",
+        "सरासरी काढा"
+      ]
+    },
+    {
+      "id": "count",
+      "name": "COUNT",
+      "category": "statistical",
+      "syntax": "=COUNT(value1, [value2], ...)",
+      "description": "Counts how many cells contain numbers in a range.",
+      "example": "=COUNT(C2:C100)",
+      "example_output": "42",
+      "use_case": "Count how many students entered numeric marks.",
+      "related": [
+        "counta",
+        "countif",
+        "countblank",
+        "countifs"
+      ],
+      "keywords": [
+        "count",
+        "how many numbers",
+        "number of cells",
+        "count numbers",
+        "किती",
+        "संख्या",
+        "संख्या मोजा",
+        "count कर"
+      ]
+    },
+    {
+      "id": "counta",
+      "name": "COUNTA",
+      "category": "statistical",
+      "syntax": "=COUNTA(value1, [value2], ...)",
+      "description": "Counts non-empty cells, including text and errors.",
+      "example": "=COUNTA(D2:D50)",
+      "example_output": "38",
+      "use_case": "Count how many employees submitted their timesheets.",
+      "related": [
+        "count",
+        "countif",
+        "countblank"
+      ],
+      "keywords": [
+        "counta",
+        "count non empty",
+        "count filled",
+        "count text",
+        "non blank count",
+        "भरलेल्या",
+        "रिकाम्या नसलेल्या",
+        "count entries"
+      ]
+    },
+    {
+      "id": "countblank",
+      "name": "COUNTBLANK",
+      "category": "statistical",
+      "syntax": "=COUNTBLANK(range)",
+      "description": "Counts empty cells in a range.",
+      "example": "=COUNTBLANK(E2:E30)",
+      "example_output": "5",
+      "use_case": "Find missing attendance entries in a month.",
+      "related": [
+        "counta",
+        "countif",
+        "count"
+      ],
+      "keywords": [
+        "countblank",
+        "empty cells",
+        "blank cells",
+        "missing",
+        "how many empty",
+        "रिकामी",
+        "रिकाम्या",
+        "कोरडे"
+      ]
+    },
+    {
+      "id": "max",
+      "name": "MAX",
+      "category": "statistical",
+      "syntax": "=MAX(number1, [number2], ...)",
+      "description": "Returns the largest value in a set of numbers.",
+      "example": "=MAX(F2:F40)",
+      "example_output": "98",
+      "use_case": "Find the highest score in an exam.",
+      "related": [
+        "min",
+        "large",
+        "rank",
+        "average"
+      ],
+      "keywords": [
+        "max",
+        "maximum",
+        "highest",
+        "largest",
+        "biggest",
+        "जास्तीत जास्त",
+        "कमाल",
+        "सर्वाधिक",
+        "सर्वोच्च"
+      ]
+    },
+    {
+      "id": "min",
+      "name": "MIN",
+      "category": "statistical",
+      "syntax": "=MIN(number1, [number2], ...)",
+      "description": "Returns the smallest value in a set of numbers.",
+      "example": "=MIN(G2:G40)",
+      "example_output": "35",
+      "use_case": "Find the lowest temperature recorded this week.",
+      "related": [
+        "max",
+        "small",
+        "average"
+      ],
+      "keywords": [
+        "min",
+        "minimum",
+        "lowest",
+        "smallest",
+        "least",
+        "किमान",
+        "कमीत कमी",
+        "लहान"
+      ]
+    },
+    {
+      "id": "product",
+      "name": "PRODUCT",
+      "category": "mathematical",
+      "syntax": "=PRODUCT(number1, [number2], ...)",
+      "description": "Multiplies all numbers in a range or list.",
+      "example": "=PRODUCT(C2:C10)",
+      "example_output": "720",
+      "use_case": "Multiply quantity by rate across multiple rows.",
+      "related": [
+        "sumproduct",
+        "power",
+        "sum"
+      ],
+      "keywords": [
+        "product",
+        "multiply",
+        "multiplication",
+        "times",
+        "गुणाकार",
+        "गुणा",
+        "multiply कर"
+      ]
+    },
+    {
+      "id": "round",
+      "name": "ROUND",
+      "category": "mathematical",
+      "syntax": "=ROUND(number, num_digits)",
+      "description": "Rounds a number to a specified number of digits.",
+      "example": "=ROUND(3.14159, 2)",
+      "example_output": "3.14",
+      "use_case": "Round prices to two decimal places before invoicing.",
+      "related": [
+        "roundup",
+        "rounddown",
+        "int"
+      ],
+      "keywords": [
+        "round",
+        "round off",
+        "decimal places",
+        "two digits",
+        "पूर्णांक",
+        "round करा",
+        "अंशांत"
+      ]
+    },
+    {
+      "id": "roundup",
+      "name": "ROUNDUP",
+      "category": "mathematical",
+      "syntax": "=ROUNDUP(number, num_digits)",
+      "description": "Rounds a number up, away from zero.",
+      "example": "=ROUNDUP(4.32, 0)",
+      "example_output": "5",
+      "use_case": "Round shipping weight up to the next whole unit.",
+      "related": [
+        "round",
+        "rounddown"
+      ],
+      "keywords": [
+        "roundup",
+        "round up",
+        "round above",
+        "always up"
+      ]
+    },
+    {
+      "id": "rounddown",
+      "name": "ROUNDDOWN",
+      "category": "mathematical",
+      "syntax": "=ROUNDDOWN(number, num_digits)",
+      "description": "Rounds a number down, toward zero.",
+      "example": "=ROUNDDOWN(7.89, 1)",
+      "example_output": "7.8",
+      "use_case": "Truncate a measured value to one decimal place.",
+      "related": [
+        "round",
+        "roundup",
+        "int"
+      ],
+      "keywords": [
+        "rounddown",
+        "round down",
+        "round below",
+        "always down"
+      ]
+    },
+    {
+      "id": "abs",
+      "name": "ABS",
+      "category": "mathematical",
+      "syntax": "=ABS(number)",
+      "description": "Returns the absolute (positive) value of a number.",
+      "example": "=ABS(-45)",
+      "example_output": "45",
+      "use_case": "Measure the size of a variance regardless of sign.",
+      "related": [
+        "int",
+        "round"
+      ],
+      "keywords": [
+        "abs",
+        "absolute",
+        "positive value",
+        "without sign",
+        "निरपेक्ष"
+      ]
+    },
+    {
+      "id": "sqrt",
+      "name": "SQRT",
+      "category": "mathematical",
+      "syntax": "=SQRT(number)",
+      "description": "Returns the positive square root of a number.",
+      "example": "=SQRT(144)",
+      "example_output": "12",
+      "use_case": "Calculate standard deviation components or geometry.",
+      "related": [
+        "power",
+        "product"
+      ],
+      "keywords": [
+        "sqrt",
+        "square root",
+        "root",
+        "वर्गमूळ"
+      ]
+    },
+    {
+      "id": "power",
+      "name": "POWER",
+      "category": "mathematical",
+      "syntax": "=POWER(number, power)",
+      "description": "Raises a number to a given power.",
+      "example": "=POWER(2, 8)",
+      "example_output": "256",
+      "use_case": "Compute compound interest factors or squares.",
+      "related": [
+        "product",
+        "sqrt"
+      ],
+      "keywords": [
+        "power",
+        "exponent",
+        "raise to",
+        "square of",
+        "cube",
+        "घात",
+        "घातांक"
+      ]
+    },
+    {
+      "id": "mod",
+      "name": "MOD",
+      "category": "mathematical",
+      "syntax": "=MOD(number, divisor)",
+      "description": "Returns the remainder after a number is divided.",
+      "example": "=MOD(10, 3)",
+      "example_output": "1",
+      "use_case": "Check even/odd values or split work in batches.",
+      "related": [
+        "int",
+        "product"
+      ],
+      "keywords": [
+        "mod",
+        "modulo",
+        "remainder",
+        "शेष",
+        "भागाशेष"
+      ]
+    },
+    {
+      "id": "int",
+      "name": "INT",
+      "category": "mathematical",
+      "syntax": "=INT(number)",
+      "description": "Rounds a number down to the nearest integer.",
+      "example": "=INT(8.9)",
+      "example_output": "8",
+      "use_case": "Extract the whole number part of a value.",
+      "related": [
+        "round",
+        "mod"
+      ],
+      "keywords": [
+        "int",
+        "integer",
+        "whole number",
+        "truncate",
+        "पूर्णांक"
+      ]
+    },
+    {
+      "id": "sumproduct",
+      "name": "SUMPRODUCT",
+      "category": "mathematical",
+      "syntax": "=SUMPRODUCT(array1, [array2], ...)",
+      "description": "Multiplies corresponding items in arrays and returns the sum.",
+      "example": "=SUMPRODUCT(D2:D10, E2:E10)",
+      "example_output": "124500",
+      "use_case": "Total bill amount = quantity column times rate column.",
+      "related": [
+        "sum",
+        "sumif",
+        "product"
+      ],
+      "keywords": [
+        "sumproduct",
+        "multiply and add",
+        "total of products",
+        "weighted",
+        "गुणून बेरीज"
+      ]
+    },
+    {
+      "id": "subtotal",
+      "name": "SUBTOTAL",
+      "category": "mathematical",
+      "syntax": "=SUBTOTAL(function_num, ref1, [ref2], ...)",
+      "description": "Performs a subtotal (sum, average, count) ignoring hidden rows.",
+      "example": "=SUBTOTAL(9, F2:F100)",
+      "example_output": "9800",
+      "use_case": "Total visible rows after applying a filter.",
+      "related": [
+        "sum",
+        "average"
+      ],
+      "keywords": [
+        "subtotal",
+        "filtered sum",
+        "visible rows",
+        "hidden rows",
+        "उप-बेरीज"
+      ]
+    },
+    {
+      "id": "if",
+      "name": "IF",
+      "category": "logical",
+      "syntax": "=IF(logical_test, value_if_true, value_if_false)",
+      "description": "Returns one value when a condition is TRUE and another when FALSE.",
+      "example": "=IF(B2>=50, \"Pass\", \"Fail\")",
+      "example_output": "Pass",
+      "use_case": "Pass/fail result based on marks, or flag over-budget rows.",
+      "related": [
+        "ifs",
+        "iferror",
+        "and",
+        "or"
+      ],
+      "keywords": [
+        "if",
+        "condition",
+        "if true else",
+        "pass fail",
+        "yes no",
+        "जर",
+        "तर",
+        "असल्यास"
+      ]
+    },
+    {
+      "id": "ifs",
+      "name": "IFS",
+      "category": "logical",
+      "syntax": "=IFS(logical_test1, value1, [logical_test2, value2], ...)",
+      "description": "Checks multiple conditions and returns the first matching value.",
+      "example": "=IFS(C2>=90,\"A\",C2>=75,\"B\",C2>=60,\"C\")",
+      "example_output": "B",
+      "use_case": "Assign letter grades from a marks column.",
+      "related": [
+        "if",
+        "switch"
+      ],
+      "keywords": [
+        "ifs",
+        "multiple conditions",
+        "many if",
+        "grade",
+        "multi condition"
+      ]
+    },
+    {
+      "id": "and",
+      "name": "AND",
+      "category": "logical",
+      "syntax": "=AND(logical1, [logical2], ...)",
+      "description": "Returns TRUE only if every condition is TRUE.",
+      "example": "=AND(D2>0, D2<100)",
+      "example_output": "TRUE",
+      "use_case": "Validate that a value is inside an accepted range.",
+      "related": [
+        "or",
+        "not",
+        "if"
+      ],
+      "keywords": [
+        "and",
+        "both conditions",
+        "all true",
+        "every condition",
+        "आणि",
+        "दोन्ही"
+      ]
+    },
+    {
+      "id": "or",
+      "name": "OR",
+      "category": "logical",
+      "syntax": "=OR(logical1, [logical2], ...)",
+      "description": "Returns TRUE if at least one condition is TRUE.",
+      "example": "=OR(E2=\"Yes\", E2=\"Y\")",
+      "example_output": "TRUE",
+      "use_case": "Accept any one of several valid status values.",
+      "related": [
+        "and",
+        "not",
+        "if"
+      ],
+      "keywords": [
+        "or",
+        "any condition",
+        "either",
+        "at least one",
+        "किंवा"
+      ]
+    },
+    {
+      "id": "not",
+      "name": "NOT",
+      "category": "logical",
+      "syntax": "=NOT(logical)",
+      "description": "Reverses the logical value of its argument.",
+      "example": "=NOT(F2=\"Closed\")",
+      "example_output": "TRUE",
+      "use_case": "Filter out rows with a specific status.",
+      "related": [
+        "and",
+        "or",
+        "if"
+      ],
+      "keywords": [
+        "not",
+        "opposite",
+        "reverse",
+        "negate",
+        "नाही"
+      ]
+    },
+    {
+      "id": "iferror",
+      "name": "IFERROR",
+      "category": "logical",
+      "syntax": "=IFERROR(value, value_if_error)",
+      "description": "Returns a friendly value when a formula produces an error.",
+      "example": "=IFERROR(G2/H2, 0)",
+      "example_output": "0",
+      "use_case": "Avoid #DIV/0! errors when dividing by empty cells.",
+      "related": [
+        "ifna",
+        "if"
+      ],
+      "keywords": [
+        "iferror",
+        "error handling",
+        "avoid error",
+        "divide by zero",
+        "गैरसोय"
+      ]
+    },
+    {
+      "id": "ifna",
+      "name": "IFNA",
+      "category": "logical",
+      "syntax": "=IFNA(value, value_if_na)",
+      "description": "Returns a fallback value specifically for #N/A errors.",
+      "example": "=IFNA(VLOOKUP(A2, $D$2:$E$20, 2, FALSE), \"Not found\")",
+      "example_output": "Not found",
+      "use_case": "Handle missing lookup results from MATCH or VLOOKUP.",
+      "related": [
+        "iferror",
+        "vlookup",
+        "match"
+      ],
+      "keywords": [
+        "ifna",
+        "n/a",
+        "not found",
+        "lookup error"
+      ]
+    },
+    {
+      "id": "switch",
+      "name": "SWITCH",
+      "category": "logical",
+      "syntax": "=SWITCH(expression, value1, result1, [value2, result2], ...)",
+      "description": "Compares an expression against a list of values and returns a match.",
+      "example": "=SWITCH(B2, 1, \"Jan\", 2, \"Feb\", \"Other\")",
+      "example_output": "Feb",
+      "use_case": "Convert numeric month codes to month names.",
+      "related": [
+        "ifs",
+        "if"
+      ],
+      "keywords": [
+        "switch",
+        "match value",
+        "replace value",
+        "map",
+        "case"
+      ]
+    },
+    {
+      "id": "sumif",
+      "name": "SUMIF",
+      "category": "conditional",
+      "syntax": "=SUMIF(range, criteria, [sum_range])",
+      "description": "Adds cells that meet a single condition.",
+      "example": "=SUMIF(A2:A100, \"North\", C2:C100)",
+      "example_output": "45200",
+      "use_case": "Total sales for one region only.",
+      "related": [
+        "countif",
+        "sumifs",
+        "averageif",
+        "sum"
+      ],
+      "keywords": [
+        "sumif",
+        "conditional sum",
+        "sum where",
+        "total if",
+        "sum only",
+        "sum based on"
+      ]
+    },
+    {
+      "id": "countif",
+      "name": "COUNTIF",
+      "category": "conditional",
+      "syntax": "=COUNTIF(range, criteria)",
+      "description": "Counts cells that meet a single condition.",
+      "example": "=COUNTIF(D2:D100, \">60\")",
+      "example_output": "31",
+      "use_case": "Count how many students scored above 60.",
+      "related": [
+        "sumif",
+        "countifs",
+        "count"
+      ],
+      "keywords": [
+        "countif",
+        "conditional count",
+        "count where",
+        "count if",
+        "how many with",
+        "count greater than",
+        "count above"
+      ]
+    },
+    {
+      "id": "countifs",
+      "name": "COUNTIFS",
+      "category": "conditional",
+      "syntax": "=COUNTIFS(criteria_range1, criteria1, [criteria_range2, criteria2], ...)",
+      "description": "Counts cells that meet multiple conditions.",
+      "example": "=COUNTIFS(A2:A100,\"East\",C2:C100,\">5000\")",
+      "example_output": "12",
+      "use_case": "Count orders from East region above 5000.",
+      "related": [
+        "countif",
+        "sumifs",
+        "if"
+      ],
+      "keywords": [
+        "countifs",
+        "multi condition count",
+        "count with two conditions",
+        "multiple criteria count"
+      ]
+    },
+    {
+      "id": "sumifs",
+      "name": "SUMIFS",
+      "category": "conditional",
+      "syntax": "=SUMIFS(sum_range, criteria_range1, criteria1, [criteria_range2, criteria2], ...)",
+      "description": "Adds cells that meet multiple conditions.",
+      "example": "=SUMIFS(C2:C100, A2:A100, \"East\", B2:B100, \"Approved\")",
+      "example_output": "78500",
+      "use_case": "Total approved sales in the East region.",
+      "related": [
+        "sumif",
+        "countifs",
+        "averageifs"
+      ],
+      "keywords": [
+        "sumifs",
+        "multi condition sum",
+        "sum with two conditions",
+        "multiple criteria sum"
+      ]
+    },
+    {
+      "id": "averageif",
+      "name": "AVERAGEIF",
+      "category": "conditional",
+      "syntax": "=AVERAGEIF(range, criteria, [average_range])",
+      "description": "Averages cells that meet a single condition.",
+      "example": "=AVERAGEIF(B2:B50, \"Team A\", C2:C50)",
+      "example_output": "81.3",
+      "use_case": "Average score of one team only.",
+      "related": [
+        "average",
+        "sumif",
+        "averageifs"
+      ],
+      "keywords": [
+        "averageif",
+        "conditional average",
+        "average where",
+        "average if"
+      ]
+    },
+    {
+      "id": "averageifs",
+      "name": "AVERAGEIFS",
+      "category": "conditional",
+      "syntax": "=AVERAGEIFS(average_range, criteria_range1, criteria1, ...)",
+      "description": "Averages cells that meet multiple conditions.",
+      "example": "=AVERAGEIFS(D2:D50, B2:B50, \"Sales\", C2:C50, \">3\")",
+      "example_output": "64.2",
+      "use_case": "Average salary of Sales staff with 3+ years experience.",
+      "related": [
+        "averageif",
+        "sumifs",
+        "average"
+      ],
+      "keywords": [
+        "averageifs",
+        "multi condition average",
+        "average with two conditions"
+      ]
+    },
+    {
+      "id": "vlookup",
+      "name": "VLOOKUP",
+      "category": "lookup",
+      "syntax": "=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])",
+      "description": "Looks for a value in the first column of a table and returns a value from another column.",
+      "example": "=VLOOKUP(A2, $E$2:$G$100, 3, FALSE)",
+      "example_output": "Printer",
+      "use_case": "Find the product name for an order ID.",
+      "related": [
+        "hlookup",
+        "index",
+        "match",
+        "xlookup"
+      ],
+      "keywords": [
+        "vlookup",
+        "lookup",
+        "find value from table",
+        "search in table",
+        "vertical lookup",
+        "खोज",
+        "शोध"
+      ]
+    },
+    {
+      "id": "hlookup",
+      "name": "HLOOKUP",
+      "category": "lookup",
+      "syntax": "=HLOOKUP(lookup_value, table_array, row_index_num, [range_lookup])",
+      "description": "Looks for a value in the top row of a table and returns a value from another row.",
+      "example": "=HLOOKUP(\"Jan\", $A$1:$E$5, 3, FALSE)",
+      "example_output": "18400",
+      "use_case": "Read a value from a horizontally arranged report table.",
+      "related": [
+        "vlookup",
+        "index",
+        "match"
+      ],
+      "keywords": [
+        "hlookup",
+        "horizontal lookup",
+        "row lookup",
+        "lookup top row"
+      ]
+    },
+    {
+      "id": "xlookup",
+      "name": "XLOOKUP",
+      "category": "lookup",
+      "syntax": "=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode])",
+      "description": "Modern lookup that searches any direction and supports a fallback value.",
+      "example": "=XLOOKUP(A2, E2:E100, F2:F100, \"Not found\")",
+      "example_output": "Not found",
+      "use_case": "Flexible lookups replacing VLOOKUP with a default message.",
+      "related": [
+        "vlookup",
+        "index",
+        "match",
+        "ifna"
+      ],
+      "keywords": [
+        "xlookup",
+        "modern lookup",
+        "new lookup",
+        "lookup with default"
+      ]
+    },
+    {
+      "id": "index",
+      "name": "INDEX",
+      "category": "lookup",
+      "syntax": "=INDEX(array, row_num, [column_num])",
+      "description": "Returns the value at a given position in a range.",
+      "example": "=INDEX(B2:D10, 5, 2)",
+      "example_output": "Ravi",
+      "use_case": "Pick a value by row and column number.",
+      "related": [
+        "match",
+        "xlookup",
+        "vlookup"
+      ],
+      "keywords": [
+        "index",
+        "position",
+        "row column value",
+        "reference value",
+        "सूची"
+      ]
+    },
+    {
+      "id": "match",
+      "name": "MATCH",
+      "category": "lookup",
+      "syntax": "=MATCH(lookup_value, lookup_array, [match_type])",
+      "description": "Returns the position of a value inside a range.",
+      "example": "=MATCH(\"Mango\", B2:B20, 0)",
+      "example_output": "7",
+      "use_case": "Find the row number of a product for INDEX.",
+      "related": [
+        "index",
+        "vlookup",
+        "xlookup",
+        "xmatch"
+      ],
+      "keywords": [
+        "match",
+        "find position",
+        "row number of",
+        "where is value",
+        "position of",
+        "स्थान"
+      ]
+    },
+    {
+      "id": "xmatch",
+      "name": "XMATCH",
+      "category": "lookup",
+      "syntax": "=XMATCH(lookup_value, lookup_array, [match_mode])",
+      "description": "Modern version of MATCH with wildcard and exact-match options.",
+      "example": "=XMATCH(\"Ravi*\", A2:A50, 2)",
+      "example_output": "9",
+      "use_case": "Locate items with wildcard matching support.",
+      "related": [
+        "match",
+        "xlookup",
+        "index"
+      ],
+      "keywords": [
+        "xmatch",
+        "new match",
+        "wildcard match"
+      ]
+    },
+    {
+      "id": "choose",
+      "name": "CHOOSE",
+      "category": "lookup",
+      "syntax": "=CHOOSE(index_num, value1, [value2], ...)",
+      "description": "Returns a value from a list based on an index number.",
+      "example": "=CHOOSE(2, \"Red\", \"Green\", \"Blue\")",
+      "example_output": "Green",
+      "use_case": "Select one of several alternative inputs by number.",
+      "related": [
+        "index",
+        "switch",
+        "match"
+      ],
+      "keywords": [
+        "choose",
+        "select from list",
+        "pick one",
+        "index list"
+      ]
+    },
+    {
+      "id": "indirect",
+      "name": "INDIRECT",
+      "category": "lookup",
+      "syntax": "=INDIRECT(ref_text)",
+      "description": "Converts a text string into a cell reference.",
+      "example": "=INDIRECT(\"A\" & B2)",
+      "example_output": "value of A5 when B2 = 5",
+      "use_case": "Build references dynamically from column names.",
+      "related": [
+        "index",
+        "match"
+      ],
+      "keywords": [
+        "indirect",
+        "text to reference",
+        "dynamic reference"
+      ]
+    },
+    {
+      "id": "concat",
+      "name": "CONCAT",
+      "category": "text",
+      "syntax": "=CONCAT(text1, [text2], ...)",
+      "description": "Joins several text items into one string.",
+      "example": "=CONCAT(A2, \" \", B2)",
+      "example_output": "Anil Kumar",
+      "use_case": "Combine first name and last name columns.",
+      "related": [
+        "textjoin",
+        "left",
+        "trim"
+      ],
+      "keywords": [
+        "concat",
+        "combine text",
+        "join text",
+        "merge text",
+        "connect",
+        "जोडा",
+        "मजकूर जोडा"
+      ]
+    },
+    {
+      "id": "textjoin",
+      "name": "TEXTJOIN",
+      "category": "text",
+      "syntax": "=TEXTJOIN(delimiter, ignore_empty, text1, [text2], ...)",
+      "description": "Joins text with a delimiter and can skip blanks.",
+      "example": "=TEXTJOIN(\", \", TRUE, B2:B10)",
+      "example_output": "Ravi, Sita, Amir",
+      "use_case": "Build a comma-separated list of names.",
+      "related": [
+        "concat",
+        "trim"
+      ],
+      "keywords": [
+        "textjoin",
+        "join with separator",
+        "comma separated",
+        "list with delimiter",
+        "with delimiter"
+      ]
+    },
+    {
+      "id": "left",
+      "name": "LEFT",
+      "category": "text",
+      "syntax": "=LEFT(text, [num_chars])",
+      "description": "Extracts characters from the beginning of a text string.",
+      "example": "=LEFT(\"Invoice-1042\", 8)",
+      "example_output": "Invoice-",
+      "use_case": "Pull a prefix code from an ID column.",
+      "related": [
+        "right",
+        "mid",
+        "len"
+      ],
+      "keywords": [
+        "left",
+        "first characters",
+        "prefix",
+        "start of text",
+        "डावीकडून"
+      ]
+    },
+    {
+      "id": "right",
+      "name": "RIGHT",
+      "category": "text",
+      "syntax": "=RIGHT(text, [num_chars])",
+      "description": "Extracts characters from the end of a text string.",
+      "example": "=RIGHT(\"INV-2024-88\", 2)",
+      "example_output": "88",
+      "use_case": "Take the trailing number from an invoice code.",
+      "related": [
+        "left",
+        "mid",
+        "len"
+      ],
+      "keywords": [
+        "right",
+        "last characters",
+        "suffix",
+        "end of text",
+        "उजवीकडून"
+      ]
+    },
+    {
+      "id": "mid",
+      "name": "MID",
+      "category": "text",
+      "syntax": "=MID(text, start_num, num_chars)",
+      "description": "Extracts a substring from the middle of a text string.",
+      "example": "=MID(\"ID-2024-0091\", 4, 4)",
+      "example_output": "2024",
+      "use_case": "Extract the year part from an ID string.",
+      "related": [
+        "left",
+        "right",
+        "len"
+      ],
+      "keywords": [
+        "mid",
+        "middle characters",
+        "substring",
+        "extract part",
+        "मध्य"
+      ]
+    },
+    {
+      "id": "len",
+      "name": "LEN",
+      "category": "text",
+      "syntax": "=LEN(text)",
+      "description": "Returns the number of characters in a text string.",
+      "example": "=LEN(\"Excel\")",
+      "example_output": "5",
+      "use_case": "Check if a mobile number has 10 digits.",
+      "related": [
+        "left",
+        "mid",
+        "trim"
+      ],
+      "keywords": [
+        "len",
+        "length",
+        "how many characters",
+        "count characters",
+        "लांबी"
+      ]
+    },
+    {
+      "id": "trim",
+      "name": "TRIM",
+      "category": "text",
+      "syntax": "=TRIM(text)",
+      "description": "Removes extra spaces from text.",
+      "example": "=TRIM(\"  Project X  \")",
+      "example_output": "Project X",
+      "use_case": "Clean imported data with hidden spaces.",
+      "related": [
+        "substitute",
+        "len"
+      ],
+      "keywords": [
+        "trim",
+        "remove spaces",
+        "clean text",
+        "extra spaces"
+      ]
+    },
+    {
+      "id": "upper",
+      "name": "UPPER",
+      "category": "text",
+      "syntax": "=UPPER(text)",
+      "description": "Converts text to uppercase letters.",
+      "example": "=UPPER(\"excel formula\")",
+      "example_output": "EXCEL FORMULA",
+      "use_case": "Standardise names or codes to capitals.",
+      "related": [
+        "lower",
+        "proper"
+      ],
+      "keywords": [
+        "upper",
+        "uppercase",
+        "capital letters",
+        "all caps",
+        "मोठ्या अक्षरी"
+      ]
+    },
+    {
+      "id": "lower",
+      "name": "LOWER",
+      "category": "text",
+      "syntax": "=LOWER(text)",
+      "description": "Converts text to lowercase letters.",
+      "example": "=LOWER(\"HELLO World\")",
+      "example_output": "hello world",
+      "use_case": "Normalise emails or codes to lower case.",
+      "related": [
+        "upper",
+        "proper"
+      ],
+      "keywords": [
+        "lower",
+        "lowercase",
+        "small letters",
+        "लहान अक्षरी"
+      ]
+    },
+    {
+      "id": "proper",
+      "name": "PROPER",
+      "category": "text",
+      "syntax": "=PROPER(text)",
+      "description": "Capitalises the first letter of each word.",
+      "example": "=PROPER(\"mumbai local\")",
+      "example_output": "Mumbai Local",
+      "use_case": "Format names into title case.",
+      "related": [
+        "upper",
+        "lower"
+      ],
+      "keywords": [
+        "proper",
+        "title case",
+        "capitalize",
+        "first letter capital"
+      ]
+    },
+    {
+      "id": "substitute",
+      "name": "SUBSTITUTE",
+      "category": "text",
+      "syntax": "=SUBSTITUTE(text, old_text, new_text, [instance_num])",
+      "description": "Replaces specific text within a string.",
+      "example": "=SUBSTITUTE(A2, \"-\", \"/\")",
+      "example_output": "2024/05",
+      "use_case": "Swap separators in imported codes.",
+      "related": [
+        "replace",
+        "trim",
+        "concat"
+      ],
+      "keywords": [
+        "substitute",
+        "replace text",
+        "swap characters",
+        "change text",
+        "बदला"
+      ]
+    },
+    {
+      "id": "replace",
+      "name": "REPLACE",
+      "category": "text",
+      "syntax": "=REPLACE(old_text, start_num, num_chars, new_text)",
+      "description": "Replaces part of a text string based on position.",
+      "example": "=REPLACE(\"AB-1234\", 4, 4, \"0099\")",
+      "example_output": "AB-0099",
+      "use_case": "Overwrite characters at a fixed position.",
+      "related": [
+        "substitute",
+        "mid",
+        "left"
+      ],
+      "keywords": [
+        "replace",
+        "positional replace",
+        "overwrite text"
+      ]
+    },
+    {
+      "id": "find",
+      "name": "FIND",
+      "category": "text",
+      "syntax": "=FIND(find_text, within_text, [start_num])",
+      "description": "Locates one text string inside another (case-sensitive).",
+      "example": "=FIND(\"@\", \"user@mail.com\")",
+      "example_output": "5",
+      "use_case": "Find the position of a separator in an email.",
+      "related": [
+        "search",
+        "mid",
+        "len"
+      ],
+      "keywords": [
+        "find",
+        "locate text",
+        "position of text",
+        "case sensitive"
+      ]
+    },
+    {
+      "id": "search",
+      "name": "SEARCH",
+      "category": "text",
+      "syntax": "=SEARCH(find_text, within_text, [start_num])",
+      "description": "Finds text inside a string, ignoring letter case.",
+      "example": "=SEARCH(\"excel\", \"Learn Excel today\")",
+      "example_output": "7",
+      "use_case": "Keyword detection inside long comments.",
+      "related": [
+        "find",
+        "left",
+        "len"
+      ],
+      "keywords": [
+        "search text",
+        "find ignoring case",
+        "contains word"
+      ]
+    },
+    {
+      "id": "text",
+      "name": "TEXT",
+      "category": "text",
+      "syntax": "=TEXT(value, format_text)",
+      "description": "Formats a value as text using a number format.",
+      "example": "=TEXT(1234.567, \"0.00\")",
+      "example_output": "1234.57",
+      "use_case": "Show a number with fixed decimals or date patterns.",
+      "related": [
+        "value",
+        "concat",
+        "round"
+      ],
+      "keywords": [
+        "text format",
+        "format number",
+        "decimal format",
+        "date format",
+        "स्वरूप"
+      ]
+    },
+    {
+      "id": "value",
+      "name": "VALUE",
+      "category": "text",
+      "syntax": "=VALUE(text)",
+      "description": "Converts a text string that looks like a number into a number.",
+      "example": "=VALUE(\"1,250\")",
+      "example_output": "1250",
+      "use_case": "Fix numbers stored as text after CSV import.",
+      "related": [
+        "text",
+        "trim"
+      ],
+      "keywords": [
+        "value",
+        "text to number",
+        "convert to number",
+        "number as text"
+      ]
+    },
+    {
+      "id": "today",
+      "name": "TODAY",
+      "category": "date-time",
+      "syntax": "=TODAY()",
+      "description": "Returns the current date without the time.",
+      "example": "=TODAY()",
+      "example_output": "2026-10-15",
+      "use_case": "Show today's date on a dashboard header.",
+      "related": [
+        "now",
+        "date",
+        "datedif"
+      ],
+      "keywords": [
+        "today",
+        "current date",
+        "aaj",
+        "आज",
+        "आजची तारीख"
+      ]
+    },
+    {
+      "id": "now",
+      "name": "NOW",
+      "category": "date-time",
+      "syntax": "=NOW()",
+      "description": "Returns the current date and time.",
+      "example": "=NOW()",
+      "example_output": "2026-10-15 14:30",
+      "use_case": "Timestamp submissions or logs.",
+      "related": [
+        "today",
+        "date"
+      ],
+      "keywords": [
+        "now",
+        "current time",
+        "date and time",
+        "timestamp",
+        "आत्ता"
+      ]
+    },
+    {
+      "id": "date",
+      "name": "DATE",
+      "category": "date-time",
+      "syntax": "=DATE(year, month, day)",
+      "description": "Builds a valid date from separate year, month and day values.",
+      "example": "=DATE(2026, 10, 15)",
+      "example_output": "2026-10-15",
+      "use_case": "Combine split date columns into one date.",
+      "related": [
+        "today",
+        "day",
+        "month",
+        "year"
+      ],
+      "keywords": [
+        "date",
+        "build date",
+        "make date",
+        "year month day",
+        "तारीख"
+      ]
+    },
+    {
+      "id": "day",
+      "name": "DAY",
+      "category": "date-time",
+      "syntax": "=DAY(serial_number)",
+      "description": "Returns the day of the month (1-31) from a date.",
+      "example": "=DAY(A2)",
+      "example_output": "15",
+      "use_case": "Group transactions by day of month.",
+      "related": [
+        "month",
+        "year",
+        "weekday"
+      ],
+      "keywords": [
+        "day",
+        "day of month",
+        "extract day",
+        "दिवस"
+      ]
+    },
+    {
+      "id": "month",
+      "name": "MONTH",
+      "category": "date-time",
+      "syntax": "=MONTH(serial_number)",
+      "description": "Returns the month number (1-12) from a date.",
+      "example": "=MONTH(A2)",
+      "example_output": "10",
+      "use_case": "Summarise data month-wise.",
+      "related": [
+        "year",
+        "day",
+        "eomonth"
+      ],
+      "keywords": [
+        "month",
+        "month number",
+        "extract month",
+        "महिना"
+      ]
+    },
+    {
+      "id": "year",
+      "name": "YEAR",
+      "category": "date-time",
+      "syntax": "=YEAR(serial_number)",
+      "description": "Returns the year from a date.",
+      "example": "=YEAR(A2)",
+      "example_output": "2026",
+      "use_case": "Compare records across years.",
+      "related": [
+        "month",
+        "day",
+        "date"
+      ],
+      "keywords": [
+        "year",
+        "extract year",
+        "वर्ष"
+      ]
+    },
+    {
+      "id": "weekday",
+      "name": "WEEKDAY",
+      "category": "date-time",
+      "syntax": "=WEEKDAY(serial_number, [return_type])",
+      "description": "Returns the day of the week for a date.",
+      "example": "=WEEKDAY(A2, 2)",
+      "example_output": "4",
+      "use_case": "Identify weekends for attendance rules.",
+      "related": [
+        "day",
+        "date",
+        "networkdays"
+      ],
+      "keywords": [
+        "weekday",
+        "day of week",
+        "weekend",
+        "which day"
+      ]
+    },
+    {
+      "id": "datedif",
+      "name": "DATEDIF",
+      "category": "date-time",
+      "syntax": "=DATEDIF(start_date, end_date, unit)",
+      "description": "Calculates the difference between two dates in days, months or years.",
+      "example": "=DATEDIF(B2, TODAY(), \"Y\")",
+      "example_output": "3",
+      "use_case": "Compute employee service length or age.",
+      "related": [
+        "today",
+        "date",
+        "eomonth"
+      ],
+      "keywords": [
+        "datedif",
+        "date difference",
+        "days between",
+        "age",
+        "service length"
+      ]
+    },
+    {
+      "id": "eomonth",
+      "name": "EOMONTH",
+      "category": "date-time",
+      "syntax": "=EOMONTH(start_date, months)",
+      "description": "Returns the last day of a month, months away from a start date.",
+      "example": "=EOMONTH(A2, 1)",
+      "example_output": "2026-11-30",
+      "use_case": "Find billing cycle end dates.",
+      "related": [
+        "date",
+        "month",
+        "datedif"
+      ],
+      "keywords": [
+        "eomonth",
+        "end of month",
+        "last day",
+        "month end"
+      ]
+    },
+    {
+      "id": "networkdays",
+      "name": "NETWORKDAYS",
+      "category": "date-time",
+      "syntax": "=NETWORKDAYS(start_date, end_date, [holidays])",
+      "description": "Counts working days between two dates, excluding weekends.",
+      "example": "=NETWORKDAYS(A2, B2)",
+      "example_output": "22",
+      "use_case": "Calculate payable working days in a month.",
+      "related": [
+        "weekday",
+        "datedif",
+        "today"
+      ],
+      "keywords": [
+        "networkdays",
+        "working days",
+        "business days",
+        "office days",
+        "कामाचे दिवस"
+      ]
+    },
+    {
+      "id": "rank",
+      "name": "RANK",
+      "category": "statistical",
+      "syntax": "=RANK(number, ref, [order])",
+      "description": "Shows the rank of a number within a list.",
+      "example": "=RANK(A2, $A$2:$A$50, 0)",
+      "example_output": "4",
+      "use_case": "Rank students by marks descending.",
+      "related": [
+        "large",
+        "small",
+        "countif"
+      ],
+      "keywords": [
+        "rank",
+        "ranking",
+        "position in list",
+        "place",
+        "क्रम"
+      ]
+    },
+    {
+      "id": "large",
+      "name": "LARGE",
+      "category": "statistical",
+      "syntax": "=LARGE(array, k)",
+      "description": "Returns the k-th largest value in a dataset.",
+      "example": "=LARGE(B2:B50, 3)",
+      "example_output": "91",
+      "use_case": "Find the 3rd highest sale in a month.",
+      "related": [
+        "small",
+        "max",
+        "rank"
+      ],
+      "keywords": [
+        "large",
+        "nth largest",
+        "top values",
+        "second highest",
+        "third highest"
+      ]
+    },
+    {
+      "id": "small",
+      "name": "SMALL",
+      "category": "statistical",
+      "syntax": "=SMALL(array, k)",
+      "description": "Returns the k-th smallest value in a dataset.",
+      "example": "=SMALL(B2:B50, 2)",
+      "example_output": "41",
+      "use_case": "Find the second lowest expense entry.",
+      "related": [
+        "large",
+        "min",
+        "rank"
+      ],
+      "keywords": [
+        "small",
+        "nth smallest",
+        "bottom values",
+        "second lowest"
+      ]
+    },
+    {
+      "id": "median",
+      "name": "MEDIAN",
+      "category": "statistical",
+      "syntax": "=MEDIAN(number1, [number2], ...)",
+      "description": "Returns the middle value of a sorted data set.",
+      "example": "=MEDIAN(C2:C30)",
+      "example_output": "68",
+      "use_case": "Get the central value of salaries (outlier safe).",
+      "related": [
+        "average",
+        "mode",
+        "percentile"
+      ],
+      "keywords": [
+        "median",
+        "middle value",
+        "midpoint"
+      ]
+    },
+    {
+      "id": "mode",
+      "name": "MODE",
+      "category": "statistical",
+      "syntax": "=MODE(number1, [number2], ...)",
+      "description": "Returns the most frequently occurring value.",
+      "example": "=MODE(D2:D60)",
+      "example_output": "25",
+      "use_case": "Find the most common shoe size ordered.",
+      "related": [
+        "median",
+        "average"
+      ],
+      "keywords": [
+        "mode",
+        "most frequent",
+        "repeated value",
+        "common value"
+      ]
+    },
+    {
+      "id": "stdev",
+      "name": "STDEV",
+      "category": "statistical",
+      "syntax": "=STDEV(number1, [number2], ...)",
+      "description": "Estimates standard deviation based on a sample.",
+      "example": "=STDEV(E2:E40)",
+      "example_output": "12.4",
+      "use_case": "Measure variability of test scores.",
+      "related": [
+        "average",
+        "median"
+      ],
+      "keywords": [
+        "stdev",
+        "standard deviation",
+        "deviation",
+        "spread of data"
+      ]
+    },
+    {
+      "id": "percentile",
+      "name": "PERCENTILE",
+      "category": "statistical",
+      "syntax": "=PERCENTILE(array, k)",
+      "description": "Returns the k-th percentile of values in a range.",
+      "example": "=PERCENTILE(B2:B50, 0.9)",
+      "example_output": "95",
+      "use_case": "Find the 90th percentile score for cutoffs.",
+      "related": [
+        "median",
+        "large",
+        "rank"
+      ],
+      "keywords": [
+        "percentile",
+        "percentage point",
+        "percent distribution"
+      ]
+    },
+    {
+      "id": "pmt",
+      "name": "PMT",
+      "category": "financial",
+      "syntax": "=PMT(rate, nper, pv, [fv], [type])",
+      "description": "Calculates the periodic payment for a loan.",
+      "example": "=PMT(8%/12, 60, 500000)",
+      "example_output": "-10138",
+      "use_case": "Monthly EMI on a 5 lakh loan for 5 years.",
+      "related": [
+        "fv",
+        "pv",
+        "rate"
+      ],
+      "keywords": [
+        "pmt",
+        "emi",
+        "loan payment",
+        "monthly installment",
+        "किस्त",
+        "हप्ता"
+      ]
+    },
+    {
+      "id": "fv",
+      "name": "FV",
+      "category": "financial",
+      "syntax": "=FV(rate, nper, pmt, [pv], [type])",
+      "description": "Returns the future value of an investment.",
+      "example": "=FV(6%/12, 60, -2000, 0)",
+      "example_output": "141218",
+      "use_case": "Corpus after monthly SIP deposits.",
+      "related": [
+        "pmt",
+        "pv",
+        "npv"
+      ],
+      "keywords": [
+        "fv",
+        "future value",
+        "investment worth",
+        "savings growth"
+      ]
+    },
+    {
+      "id": "pv",
+      "name": "PV",
+      "category": "financial",
+      "syntax": "=PV(rate, nper, pmt, [fv], [type])",
+      "description": "Returns the present value of an investment or loan.",
+      "example": "=PV(9%/12, 60, -12000)",
+      "example_output": "567000",
+      "use_case": "How much loan you can afford for a given EMI.",
+      "related": [
+        "pmt",
+        "fv",
+        "npv"
+      ],
+      "keywords": [
+        "pv",
+        "present value",
+        "loan amount",
+        "affordable"
+      ]
+    },
+    {
+      "id": "npv",
+      "name": "NPV",
+      "category": "financial",
+      "syntax": "=NPV(rate, value1, [value2], ...)",
+      "description": "Net present value of a series of future cash flows.",
+      "example": "=NPV(10%, B2:B6)",
+      "example_output": "184200",
+      "use_case": "Evaluate whether a project's returns beat the discount rate.",
+      "related": [
+        "irr",
+        "pv",
+        "fv"
+      ],
+      "keywords": [
+        "npv",
+        "net present value",
+        "cash flow value"
+      ]
+    },
+    {
+      "id": "irr",
+      "name": "IRR",
+      "category": "financial",
+      "syntax": "=IRR(values, [guess])",
+      "description": "Internal rate of return for a series of cash flows.",
+      "example": "=IRR(A1:A6)",
+      "example_output": "0.14",
+      "use_case": "Compare investment return against hurdle rate.",
+      "related": [
+        "npv",
+        "rate",
+        "pv"
+      ],
+      "keywords": [
+        "irr",
+        "internal rate of return",
+        "return on investment"
+      ]
+    },
+    {
+      "id": "rate",
+      "name": "RATE",
+      "category": "financial",
+      "syntax": "=RATE(nper, pmt, pv, [fv], [type], [guess])",
+      "description": "Calculates the interest rate per period of a loan or investment.",
+      "example": "=RATE(60, -10138, 500000)",
+      "example_output": "0.0067",
+      "use_case": "Find the implied interest rate on a loan plan.",
+      "related": [
+        "pmt",
+        "pv",
+        "npv"
+      ],
+      "keywords": [
+        "rate",
+        "interest rate",
+        "loan rate",
+        "ब्याज दर"
+      ]
+    }
+  ]
+}
